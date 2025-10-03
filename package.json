@@ -1,0 +1,30 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "A practice restaurant website, whose entire content is dynamically generated using JavaScript.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-aboulsauood/restaurant-page.git"
+  },
+  "keywords": [
+    "ali-aboulsauood",
+    "ali-mohammed",
+    "git",
+    "github",
+    "practice",
+    "practice-project",
+    "the-odin-project",
+    "odin-project",
+    "odin-full-stack-javascript",
+    "odin-full-stack-js",
+    "odin-restaurant-page",
+    "restaurant-page"
+  ],
+  "author": "Ali Aboul-Sauood <aliaboulsauood@tutamail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ali-aboulsauood/restaurant-page/issues"
+  },
+  "homepage": "https://ali-aboulsauood.github.io/restaurant-page"
+}
