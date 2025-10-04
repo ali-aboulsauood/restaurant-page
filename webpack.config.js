@@ -1,5 +1,7 @@
 const path = require("path");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FontPreloadPlugin = require("webpack-font-preload-plugin");
 
 module.exports = {
   mode: "development",
@@ -21,6 +23,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/template.html",
     }),
+
+    new FontPreloadPlugin({
+      extensions: ["woff", "woff2"],
+
+      crossorigin: true,
+
+      loadType: "preload",
+    }),
   ],
 
   module: {
@@ -38,7 +48,12 @@ module.exports = {
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: "asset/resource",
-        }
+        },
+
+        {
+          test: /\.(woff|woff2)$/i,
+          type: 'asset/resource',
+        },
       ],
   },
 };
