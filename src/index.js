@@ -2,9 +2,31 @@ import "./styles.css"
 
 // TODO: Use a more dynamic way for bulk importing from directories
 
+import contentElement from "./DOMCache";
+
 import generateHomeContent from "./tabs/home";
 import generateMenuContent from "./tabs/menu";
 import generateAboutContent from "./tabs/about";
+
+// Generate the content of the homepage on page load.
+generateHomeContent();
+
+// Sets necessary HTML attributes for all anchor elements.
+const setAnchorElementAttributes = () => {
+    const allAnchorElements = document.querySelectorAll('a');
+
+    allAnchorElements.forEach(anchorElement => {
+        anchorElement.setAttribute('rel', 'noopener noreferrer');
+        anchorElement.setAttribute('target', '_blank');
+    });
+};
+
+// Clears the main page content element.
+const clearContentElement = () => {
+    // `Node.replaceChildren()` (with no arguments) is the most convenient method for emptying a DOM Node. It is a Baseline feature as of the time of writing this script.
+    // Refer to https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren#emptying_a_node.
+    contentElement.replaceChildren();
+};
 
 const CLASS_TAB = 'tab';
 const CLASS_ACTIVE_TAB = 'active-tab';
@@ -30,7 +52,7 @@ const switchTab = (event) => {
         return;
 
     const tabId = tab.dataset.id;
-    const tabAction = tabActions[tabId];
+    const fillContentElement = tabActions[tabId];
     
     allTabs.forEach(tab => {
         if (tab.classList.contains(CLASS_ACTIVE_TAB))
@@ -39,7 +61,9 @@ const switchTab = (event) => {
             tab.classList.add(CLASS_ACTIVE_TAB);
     });
 
-    tabAction();
+    clearContentElement();
+    fillContentElement();
+    setAnchorElementAttributes();
 };
 
 tabContainer.addEventListener('click', switchTab);
