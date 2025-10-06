@@ -27,7 +27,7 @@
   font-weight: bold;
   font-style: normal;
 
-  font-display: block;
+  font-display: swap;
 }
 
 /* Paragraph font - Playfair 144pt */
@@ -42,7 +42,7 @@
   font-weight: normal;
   font-style: normal;
 
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -55,7 +55,7 @@
   font-weight: bold;
   font-style: normal;
 
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -68,7 +68,7 @@
   font-weight: normal;
   font-style: italic;
 
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -81,7 +81,7 @@
   font-weight: bold;
   font-style: italic;
 
-  font-display: block;
+  font-display: swap;
 }
 
 /* CSS Variables */
@@ -95,4 +95,171 @@
   --logo-font: "Italianno", var(--system-font-stack-serif);
   --title-font: "Playfair Display", var(--system-font-stack-serif);
   --text-font: "Playfair 144pt", var(--system-font-stack-serif);
+
+  /* Colors */
+
+  --background-color: #141414;
+  --foreground-color: #D4AF37;
+
+  --text-color: #F3F3F3;
+
+  --background-color-transparent: #14141480;
+  --foreground-color-transparent: #D4AD3780;
+
+  --text-color-transparent: #F3F3F380;
+}
+
+/* (0) General Styles*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+*:focus, *:focus-visible {
+  outline: none;
+}
+
+a {
+  color: var(--foreground-color);
+}
+
+a:hover, a:focus-visible, button:hover, button:focus-visible {
+  text-shadow: 0 0 8px var(--foreground-color);
+}
+
+button {
+  appearance: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.highlighted {
+  color: var(--foreground-color);
+}
+
+.italic {
+  font-style: italic;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  place-items: center;
+
+  height: 100vh;
+
+  font-family: var(--text-font);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* (1) Header styles */
+
+header {
+  padding-bottom: 64px;
+}
+
+#logo {
+  font-family: var(--logo-font);
+  font-size: 5rem;
+
+  margin-top: 32px;
+  margin-bottom: 16px;
+
+  color: var(--foreground-color);
+}
+
+header > nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tab {
+  font-family: var(--logo-font);
+  font-size: 2rem;
+
+  padding: 0 5px 2px 5px;
+
+  background-color: transparent;
+  color: var(--foreground-color);
+}
+
+.tab.active-tab, .tab:hover, .tab:focus-visible {
+  --border-width: 4px;
+
+  border-bottom: var(--border-width) solid var(--foreground-color);
+
+  /* To prevent button text from shifting upwards on hover/keyboard focus. */
+  padding-top: var(--border-width);
+}
+
+.tab:hover, .tab:focus-visible {
+  border-bottom-color: var(--foreground-color-transparent);
+}
+
+/* (2) Content styles */
+
+#content {
+  place-self: stretch;
+}
+
+#content > * {
+  padding-left: 64px;
+  padding-right: 16px;
+}
+
+#main-image-container {
+  text-align: center;
+
+  margin-bottom: 32px;
+  padding: 0;
+}
+
+#headline {
+  font-family: var(--title-font);
+  font-size: 4rem;
+
+  margin-bottom: 32px;
+}
+
+#main-image-container img {
+  border: 2px solid var(--foreground-color);
+}
+
+#text {
+  font-size: 2rem;
+}
+
+.statement {
+  margin-bottom: 20px;
+}
+
+.statement > p:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+#punchline {
+  font-weight: bold;
+
+  font-size: 1.1em;
+}
+
+/* (3) Footer styles */
+
+footer {
+  width: 100%;
+
+  margin-top: 48px;
+  padding: 16px 0;
+  border-top: 1px solid var(--foreground-color);
+
+  text-align: center;
+
+  font-size: 1.5rem;
 }
