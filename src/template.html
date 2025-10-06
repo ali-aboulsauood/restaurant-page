@@ -19,22 +19,25 @@
             <h1 id="logo">The Gilded Fork</h1>
 
             <nav>
-                <button type="button" title="Return to restaurant homepage">Home</button>
-                <button type="button" title="Click here to browse our menu!">Menu</button>
-                <button type="button" title="Click here to know more about or contact us">About</button>
+                <button type="button" title="Return to restaurant homepage" class="tab active-tab">Home</button>
+                <button type="button" title="Click here to browse our menu!" class="tab">Menu</button>
+                <button type="button" title="Click here to know more about or contact us." class="tab">About</button>
             </nav>
         </header>
 
         <div id="content">
-                <h2 id="headline">
-                    We've stripped the culinary experience down to its most essential element—the <span class="bold">price tag</span>.
-                </h2>
-
                 <div id="main-image-container">
-
+                    <a href="https://unsplash.com/photos/round-plate-fork-and-knife-Mpjv-bEfPLM" title="Round plate, fork, and knife by Shuenz Hsu. Click to visit source on Unsplash." rel="noopener noreferrer" target="_blank">
+                        <img src="assets/images/shuenz-hsu-Mpjv-bEfPLM-unsplash.jpg" alt="round plate, fork, and knife" width="35%" height="35%">
+                    </a>
                 </div>
 
-                <p id="text">
+                <h2 id="headline">
+                    We've stripped the culinary experience down to its most essential element<wbr>—the <span class="highlighted">price tag</span>.
+                </h2>
+
+                <!-- The element of `id="text"` cannot be a paragraph, as block-level elements cannot be nested within one another. -->
+                <div id="text">
                     <p class="statement">
                         At The Gilded Fork, we're not just serving dinner, we're serving a statement—a statement that says, '<span class="italic">I have so much money, I can pay for an experience that is 99% plate and 1% sustenance.</span>'
                     </p>
@@ -43,23 +46,26 @@
                         Our chefs have scoured the globe for the most needlessly expensive ingredients, ensuring that every bite is a reminder of your superior social and financial standing.
                     </p>
                     
-                    <p class="statement">
-                        For some meals, there is so much gold... so many diamonds... that what you are seeing is no more a meal to be enjoyed, but rather an ostentatious work of art to be photographed.
+                    <div class="statement">
+                        <p>
+                            For some meals, there is so much gold... so many diamonds... that what you are seeing is no more a meal to be enjoyed, but rather an ostentatious work of art to be photographed.
+                        </p>
 
-                        <br>
-
-                        For some other meals, portions are inversely proportional to the price—the smaller your meal is, the greater the attention you gain.
-                    </p>
+                        <p>
+                            For some other meals, portions are inversely proportional to the price—the smaller your meal is, the greater the attention you gain.
+                        </p>
+                    </div>
 
                     <p id="punchline">
                         Don't come here to eat—come here to be seen spending.
                     </p>
-                </p>
+                </div>
         </div>
 
         <footer>
-            ©<span class="year">2025</span>
-            <a href="https://www.github.com/ali-aboulsauood" title="Click here to visit the creator's GitHub profile" rel="author noopener noreferrer">
+            ©
+            <span class="year">2025</span>
+            <a href="https://www.github.com/ali-aboulsauood" title="Click here to visit the creator's GitHub profile" rel="author noopener noreferrer" target="_blank">
                 Ali Aboul-Sauood
             </a>
         </footer>
