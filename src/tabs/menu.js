@@ -33,7 +33,7 @@ class menuItem {
         itemTextContainer.classList.add("item-text");
 
         const itemImageContainer = document.createElement('div');
-        itemImageContainer.classList.add("item-image");
+        itemImageContainer.classList.add("item-image", "colored");
 
         // (1) Child nodes of `itemTextContainer`
         // --------------------------------------
@@ -44,7 +44,7 @@ class menuItem {
         // There is no evidence to support this behavior - I chose it based on the fact that heading levels should be used in sequence without skipping any level.
 
         const itemName_ = document.createElement('h2');
-        itemName_.classList.add("item-name");
+        itemName_.classList.add("item-name", "colored");
         itemName_.innerHTML = this.itemName;
 
         // (1 - 3) Item Description
@@ -56,7 +56,7 @@ class menuItem {
         // (1 - 4) Item Price
 
         const itemPrice = document.createElement('p');
-        itemPrice.classList.add("item-price");
+        itemPrice.classList.add("item-price", "colored");
         itemPrice.textContent = this.formatPrice();
 
         const itemDetails = [ itemName_, itemDescription, itemPrice ];
