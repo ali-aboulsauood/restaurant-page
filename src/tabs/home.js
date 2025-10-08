@@ -27,7 +27,7 @@ const generateContent = () => {
 
     const headline = document.createElement('h2');
     headline.setAttribute('id', "headline");
-    headline.innerHTML = `We've stripped the culinary experience down to its most essential element<wbr>—the <span class="highlighted">price tag</span>.`;
+    headline.innerHTML = `We've stripped the culinary experience down to its most essential element<wbr>—the <span class="colored">price tag</span>.`;
 
     contentElement.appendChild(headline);
 

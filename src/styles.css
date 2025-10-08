@@ -108,6 +108,7 @@
 
   /* Used in bottom borders of tab buttons on hover. */
   --foreground-color-transparent: #D4AD3780;
+  --text-color-transparent: #e0d4b84d;
 }
 
 /* (0) General Styles*/
@@ -123,8 +124,12 @@
   outline: none;
 }
 
-a {
-  color: var(--foreground-color);
+::selection {
+  background-color: var(--foreground-color-transparent);
+}
+
+.colored::selection {
+  background-color: var(--text-color-transparent);
 }
 
 a:hover, a:focus-visible, button:hover, button:focus-visible, #logo:hover {
@@ -148,7 +153,7 @@ i {
   font-style: italic;
 }
 
-.highlighted {
+.colored {
   color: var(--foreground-color);
 }
 
@@ -184,8 +189,6 @@ header {
   margin-bottom: 16px;
 
   cursor: pointer;
-
-  color: var(--foreground-color);
 }
 
 header > nav {
@@ -200,7 +203,6 @@ header > nav {
   padding: 0 5px 2px 5px;
 
   background-color: transparent;
-  color: var(--foreground-color);
 }
 
 .tab.active-tab, .tab:hover, .tab:focus-visible {
@@ -325,8 +327,6 @@ header > nav {
 
   /* Prevent the cursor from changing appearance on hovering over the "Photo unavailable" text. */
   cursor: default;
-
-  color: var(--foreground-color);
 }
 
 .item-text {
@@ -348,8 +348,6 @@ header > nav {
   font-size: 3rem;
   
   margin-bottom: 24px;
-
-  color: var(--foreground-color);
 }
 
 .item-description > p {
@@ -362,8 +360,6 @@ header > nav {
 
 .item-price {
   margin-top: auto;
-
-  color: var(--foreground-color);
 }
 
 /* (3) Footer styles */
