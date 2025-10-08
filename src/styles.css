@@ -30,27 +30,43 @@
   font-display: swap;
 }
 
-/* Paragraph font - Playfair 144pt */
+/* Paragraph font - Cormorant */
 
 @font-face {
-  /* Playfair 144pt Regular */
-  font-family: 'Playfair 144pt';
-  src:  local('Playfair 144pt Regular'), local('Playfair144pt-Regular'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Regular.woff2') format('woff2'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Regular.woff') format('woff');
+  /* Cormorant Medium */
+  font-family: 'Cormorant';
 
-  font-weight: normal;
+  src:  local('Cormorant Medium'), local('Cormorant-Medium'),
+        url('assets/fonts/cormorant/subset-Cormorant-Medium.woff2') format('woff2'),
+        url('assets/fonts/cormorant/subset-Cormorant-Medium.woff') format('woff');
+
+  font-weight: 500;
   font-style: normal;
 
   font-display: swap;
 }
 
 @font-face {
-  /* Playfair 144pt Bold */
-  font-family: 'Playfair 144pt';
-  src:  local('Playfair 144pt Bold'), local('Playfair144pt-Bold'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Bold.woff2') format('woff2'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Bold.woff') format('woff');
+  /* Cormorant Medium Italic */
+  font-family: 'Cormorant';
+
+  src:  local('Cormorant Medium Italic'), local('Cormorant-MediumItalic'),
+        url('assets/fonts/cormorant/subset-Cormorant-MediumItalic.woff2') format('woff2'),
+        url('assets/fonts/cormorant/subset-Cormorant-MediumItalic.woff') format('woff');
+
+  font-weight: 500;
+  font-style: italic;
+
+  font-display: swap;
+}
+
+@font-face {
+  /* Cormorant Bold */
+  font-family: 'Cormorant';
+
+  src:  local('Cormorant Bold'), local('Cormorant-Bold'),
+        url('assets/fonts/cormorant/subset-Cormorant-Bold.woff2') format('woff2'),
+        url('assets/fonts/cormorant/subset-Cormorant-Bold.woff') format('woff');
 
   font-weight: bold;
   font-style: normal;
@@ -59,24 +75,12 @@
 }
 
 @font-face {
-  /* Playfair 144pt Italic */
-  font-family: 'Playfair 144pt';
-  src:  local('Playfair 144pt Italic'), local('Playfair144pt-Italic'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Italic.woff2') format('woff2'),
-        url('assets/fonts/playfair/subset-Playfair144pt-Italic.woff') format('woff');
+  /* Cormorant Bold Italic */
+  font-family: 'Cormorant';
 
-  font-weight: normal;
-  font-style: italic;
-
-  font-display: swap;
-}
-
-@font-face {
-  /* Playfair 144pt Bold Italic */
-  font-family: 'Playfair 144pt';
-  src:  local('Playfair 144pt Bold Italic'), local('Playfair144pt-BoldItalic'),
-        url('assets/fonts/playfair/subset-Playfair144pt-BoldItalic.woff2') format('woff2'),
-        url('assets/fonts/playfair/subset-Playfair144pt-BoldItalic.woff') format('woff');
+  src:  local('Cormorant Bold Italic'), local('Cormorant-BoldItalic'),
+        url('assets/fonts/cormorant/subset-Cormorant-BoldItalic.woff2') format('woff2'),
+        url('assets/fonts/cormorant/subset-Cormorant-BoldItalic.woff') format('woff');
 
   font-weight: bold;
   font-style: italic;
@@ -94,19 +98,16 @@
 
   --logo-font: "Italianno", var(--system-font-stack-serif);
   --title-font: "Playfair Display", var(--system-font-stack-serif);
-  --text-font: "Playfair 144pt", var(--system-font-stack-serif);
+  --text-font: "Cormorant", var(--system-font-stack-serif);
 
   /* Colors */
 
-  --background-color: #141414;
+  --background-color: linear-gradient(135deg, #1A1A1A 0%, #2C1810 25%, #3D2418 50%, #2C1810 75%, #1A1A1A 100%);;
   --foreground-color: #D4AF37;
+  --text-color: #E0D4B8;
 
-  --text-color: #F3F3F3;
-
-  --background-color-transparent: #14141480;
+  /* Used in bottom borders of tab buttons on hover. */
   --foreground-color-transparent: #D4AD3780;
-
-  --text-color-transparent: #F3F3F380;
 }
 
 /* (0) General Styles*/
@@ -126,7 +127,7 @@ a {
   color: var(--foreground-color);
 }
 
-a:hover, a:focus-visible, button:hover, button:focus-visible {
+a:hover, a:focus-visible, button:hover, button:focus-visible, #logo:hover {
   text-shadow: 0 0 8px var(--foreground-color);
 }
 
@@ -137,12 +138,18 @@ button {
   cursor: pointer;
 }
 
-.highlighted {
-  color: var(--foreground-color);
+b {
+  /* The bring attention to element (`b`) is not required to be rendered in bold as per the specification. */
+  font-weight: bold;
 }
 
-.italic {
+i {
+  /* The idiomatic text element (`i`) is not required to be rendered in italics as per the specification. */
   font-style: italic;
+}
+
+.highlighted {
+  color: var(--foreground-color);
 }
 
 body {
@@ -155,7 +162,11 @@ body {
 
   font-family: var(--text-font);
 
-  background-color: var(--background-color);
+  background-image: var(--background-color);
+
+  /* Forces the background to be fixed to the viewport without getting cut off on scrolling (as its size is smaller than the size of the viewport) */
+  background-attachment: fixed;
+
   color: var(--text-color);
 }
 
@@ -171,6 +182,8 @@ header {
 
   margin-top: 32px;
   margin-bottom: 16px;
+
+  cursor: default;
 
   color: var(--foreground-color);
 }
@@ -203,7 +216,7 @@ header > nav {
   border-bottom-color: var(--foreground-color-transparent);
 }
 
-/* (2) Content styles */
+/* (2) Content styles - Home tab */
 
 #content {
   place-self: stretch;
@@ -228,7 +241,7 @@ header > nav {
   margin-bottom: 32px;
 }
 
-#main-image-container img {
+#main-image-container img, .item-image {
   border: 2px solid var(--foreground-color);
 }
 
@@ -248,6 +261,109 @@ header > nav {
   font-weight: bold;
 
   font-size: 1.1em;
+}
+
+/* (5) Content Styles - Menu tab */
+
+#menu {
+  --padding-left-right: 64px;
+
+  list-style-type: none;
+
+  padding-left: var(--padding-left-right);
+  padding-right: var(--padding-left-right);
+}
+
+.menu-item {
+  --padding-top-bottom: 64px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:not(:first-child) {
+  padding-top: var(--padding-top-bottom);
+}
+
+.menu-item-parent {
+  display: flex;
+
+  gap: 64px;
+
+  padding-bottom: var(--padding-top-bottom);
+}
+
+.menu-item:nth-child(2n + 1) > .menu-item-parent {
+  flex-direction: row-reverse;
+}
+
+.menu-item:not(:last-child)::after {
+  content: '';
+
+  align-self: center;
+
+  width: 20%;
+  height: 4px;
+
+  background-color: var(--foreground-color);
+}
+
+.item-image {
+  align-self: center;
+  flex: 1.2;
+
+  display: grid;
+  place-content: center;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  /* Force all image containers to have the same height, even when they contain no images or images of different dimensions. */
+  height: 350px;
+
+  /* Prevent the cursor from changing appearance on hovering over the "Photo unavailable" text. */
+  cursor: default;
+
+  color: var(--foreground-color);
+}
+
+.item-text {
+  flex: 3;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px 0;
+}
+
+.item-image > img {
+  width: 100%;
+  height: 100%;
+}
+
+.item-name {
+  font-family: var(--title-font);
+  font-size: 3rem;
+  
+  margin-bottom: 24px;
+
+  color: var(--foreground-color);
+}
+
+.item-description > p {
+  margin-bottom: 16px;
+}
+
+.item-description, .item-price {
+  font-size: 2rem;
+}
+
+.item-price {
+  margin-top: auto;
+
+  color: var(--foreground-color);
 }
 
 /* (3) Footer styles */
