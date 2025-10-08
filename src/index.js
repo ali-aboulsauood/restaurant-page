@@ -8,9 +8,6 @@ import generateHomeContent from "./tabs/home";
 import generateMenuContent from "./tabs/menu";
 import generateAboutContent from "./tabs/about";
 
-// Generate the content of the homepage on page load.
-generateHomeContent();
-
 // Sets necessary HTML attributes for all anchor elements.
 const setAnchorElementAttributes = () => {
     const allAnchorElements = document.querySelectorAll('a');
@@ -18,6 +15,7 @@ const setAnchorElementAttributes = () => {
     allAnchorElements.forEach(anchorElement => {
         anchorElement.setAttribute('rel', 'noopener noreferrer');
         anchorElement.setAttribute('target', '_blank');
+        anchorElement.classList.add("colored");
     });
 };
 
@@ -27,6 +25,14 @@ const clearContentElement = () => {
     // Refer to https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren#emptying_a_node.
     contentElement.replaceChildren();
 };
+
+const doOnSiteLoad = (() => {
+    // Generate the content of the homepage on site load.
+    generateHomeContent();
+
+    // Set attributes for anchor elements on site load.
+    setAnchorElementAttributes();
+})();
 
 const CLASS_TAB = 'tab';
 const CLASS_ACTIVE_TAB = 'active-tab';
