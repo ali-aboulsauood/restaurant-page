@@ -183,7 +183,7 @@ header {
   margin-top: 32px;
   margin-bottom: 16px;
 
-  cursor: default;
+  cursor: pointer;
 
   color: var(--foreground-color);
 }

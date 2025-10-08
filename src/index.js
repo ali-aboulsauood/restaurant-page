@@ -67,3 +67,9 @@ const switchTab = (event) => {
 };
 
 tabContainer.addEventListener('click', switchTab);
+
+const logo = document.querySelector("#logo");
+
+const clickEvent = new PointerEvent('click', {bubbles: true});
+
+logo.addEventListener('click', () => allTabs[0].dispatchEvent(clickEvent));
