@@ -354,8 +354,16 @@ header > nav {
   margin-bottom: 16px;
 }
 
-.item-description, .item-price {
+.chef-name {
+  margin-bottom: 48px;
+}
+
+.chef-name, .item-price {
   font-size: 2rem;
+}
+
+.item-description {
+  font-size: 1.9rem;
 }
 
 .item-price {

@@ -6,18 +6,19 @@ const menuList = document.createElement('ul');
 menuList.setAttribute('id', "menu");
 
 // NOTE: The most semantically correct element for representing the restaurant menu is a description list (`dl`), but the acceptable alternative (`ul`) is used to facilitate styling.
-
 class menuItem {
     // Used to format number representing price (`itemPriceInUSD`) as an amount of US Dollars, with the dollar sign ('$') preceding the number, a comma (',') as a number separator, and a period ('.') as a radix point.
     // Refer to: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat.
     #priceInUSDFormat = new Intl.NumberFormat(document.documentElement.getAttribute('lang'), { style: "currency", currency: "USD" });
 
+    #defaultChefName = "Ali Aboul-Sauood";
+
     // NOTE: `Number.prototype.toLocaleString` is not used for performance considerations. Refer to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString.
 
-    constructor(itemName, itemDescription, itemPriceInUSD, itemImage = null) {
+    constructor(itemName, itemDescription, itemPriceInUSD, itemImage = null, chefName = this.#defaultChefName) {
         // TODO: Add script to validate arguments.
 
-        const fields = { itemName, itemDescription, itemPriceInUSD, itemImage };
+        const fields = { itemName, chefName, itemDescription, itemPriceInUSD, itemImage };
         Object.assign(this, fields);
     };
 
@@ -47,6 +48,11 @@ class menuItem {
         itemName_.classList.add("item-name", "colored");
         itemName_.innerHTML = this.itemName;
 
+        // (1 - 2) Chef Name
+        const chefName_ = document.createElement('p');
+        chefName_.classList.add("chef-name");
+        chefName_.innerHTML = `by <span class="colored">${this.chefName}</span>`;
+
         // (1 - 3) Item Description
 
         const itemDescription = document.createElement('div');
@@ -59,7 +65,7 @@ class menuItem {
         itemPrice.classList.add("item-price", "colored");
         itemPrice.textContent = this.formatPrice();
 
-        const itemDetails = [ itemName_, itemDescription, itemPrice ];
+        const itemDetails = [ itemName_, chefName_, itemDescription, itemPrice ];
         itemTextContainer.replaceChildren(...itemDetails);
 
         // (2) Item Image
