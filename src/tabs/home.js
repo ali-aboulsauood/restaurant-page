@@ -4,6 +4,7 @@ import pathToMainImage from "../assets/images/shuenz-hsu-Mpjv-bEfPLM-unsplash.jp
 
 const generateContent = () => {
     // (1) Main Image container
+
     const mainImageContainer = document.createElement('div');
     mainImageContainer.setAttribute('id', "main-image-container");
 
@@ -23,6 +24,7 @@ const generateContent = () => {
     mainImageContainer_Anchor.appendChild(mainImageContainer_Anchor_Image);
 
     // (2) Headline
+
     const headline = document.createElement('h2');
     headline.setAttribute('id', "headline");
     headline.innerHTML = `We've stripped the culinary experience down to its most essential element<wbr>—the <span class="highlighted">price tag</span>.`;
@@ -40,7 +42,7 @@ const generateContent = () => {
     contentElement.appendChild(text);
 
     const text_Statement1 = document.createElement('p');
-    text_Statement1.innerHTML = `At The Gilded Fork, we're not just serving dinner, we're serving a statement—a statement that says, '<span class="italic">I have so much money, I can pay for an experience that is 99% plate and 1% sustenance.</span>'`;
+    text_Statement1.innerHTML = `At The Gilded Fork, we're not just serving dinner, we're serving a statement—a statement that says, '<i>I have so much money, I can pay for an experience that is 99% plate and 1% sustenance.</i>'`;
 
     const text_Statement2 = document.createElement('p');
     text_Statement2.innerHTML = `Our chefs have scoured the globe for the most needlessly expensive ingredients, ensuring that every bite is a reminder of your superior social and financial standing.`;
@@ -54,7 +56,7 @@ const generateContent = () => {
     text_Statement3_Paragraph2.innerHTML = `For some other meals, portions are inversely proportional to the price—the smaller your meal is, the greater the attention you gain.`;
 
     const text_Punchline = document.createElement('p');
-    text_Punchline.innerHTML = `Don't come here to eat—come here to be seen spending.`;
+    text_Punchline.innerHTML = `<b>Don't come here to eat—come here to be seen spending.</b>`;
 
     const text_ChildNodes = [text_Statement1, text_Statement2, text_Statement3];
     text_ChildNodes.forEach(text_ChildNode => text_ChildNode.classList.add('statement'));
