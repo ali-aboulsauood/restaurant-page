@@ -1,6 +1,6 @@
 # Restaurant Page
 
-**NOTE**: This project is **_still in development_**. You can take a look at my [other projects](#other-projects) for the meantime.
+<!-- **NOTE**: This project is **_still in development_**. You can take a look at my [other projects](#other-projects) for the meantime. -->
 
 A restaurant website, with the entire content being dynamically generated using JavaScript.
 
