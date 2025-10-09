@@ -164,10 +164,6 @@ h2, .section-title {
   margin-bottom: 24px;
 }
 
-.section-content {
-  font-size: 1.9rem;
-}
-
 .section-content > * {
   margin-bottom: 20px;
 }
@@ -191,6 +187,7 @@ body {
   height: 100vh;
 
   font-family: var(--text-font);
+  font-size: 1.9rem;
 
   background-image: var(--background-color);
 
@@ -436,4 +433,19 @@ footer {
   text-align: center;
 
   font-size: 1.5rem;
+}
+
+/* Extra: Dish suggestion paragraph styles */
+.suggest-dish-notification {
+  padding: 8px 0;
+  border: 2px double var(--foreground-color);
+  margin-bottom: 64px;
+
+  place-self: center;
+
+  font-size: 1.5rem;
+
+  width: fit-content;
+
+  background-color: rgba(200, 200, 210, 0.06);
 }
