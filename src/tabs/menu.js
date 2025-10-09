@@ -1,4 +1,5 @@
 import contentElement from "../DOMCache";
+import { suggestNewDish } from "../DOMCache";
 
 // While the restaurant menu items are sorted by price, an ordered list (`ol`) is not the semantically correct element to represent it.
 // This is because the order of menu items is a display choice with no actual meaning - menu items are equivalent and the meaning of the menu will not be changed if it were reordered.
@@ -163,6 +164,8 @@ const sortMenuItems = () => {
 };
 
 const generateContent = () => {
+    contentElement.appendChild(suggestNewDish);
+
     contentElement.appendChild(menuList);
 
     // `Node.hasChildNodes` returns `true` if the `Node` object it is called on contains any child nodes, including non-element nodes.
