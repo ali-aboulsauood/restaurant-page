@@ -74,20 +74,6 @@
   font-display: swap;
 }
 
-@font-face {
-  /* Cormorant Bold Italic */
-  font-family: 'Cormorant';
-
-  src:  local('Cormorant Bold Italic'), local('Cormorant-BoldItalic'),
-        url('assets/fonts/cormorant/subset-Cormorant-BoldItalic.woff2') format('woff2'),
-        url('assets/fonts/cormorant/subset-Cormorant-BoldItalic.woff') format('woff');
-
-  font-weight: bold;
-  font-style: italic;
-
-  font-display: swap;
-}
-
 /* CSS Variables */
 :root {
   /* Fonts */
