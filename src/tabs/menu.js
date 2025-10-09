@@ -45,7 +45,7 @@ class menuItem {
         // There is no evidence to support this behavior - I chose it based on the fact that heading levels should be used in sequence without skipping any level.
 
         const itemName_ = document.createElement('h2');
-        itemName_.classList.add("item-name", "colored");
+        itemName_.classList.add("item-name", "section-title", "colored");
         itemName_.innerHTML = this.itemName;
 
         // (1 - 2) Chef Name
@@ -56,7 +56,7 @@ class menuItem {
         // (1 - 3) Item Description
 
         const itemDescription = document.createElement('div');
-        itemDescription.classList.add("item-description");
+        itemDescription.classList.add("item-description", "section-content");
         itemDescription.innerHTML = this.itemDescription;
 
         // (1 - 4) Item Price

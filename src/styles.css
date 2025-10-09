@@ -153,8 +153,33 @@ i {
   font-style: italic;
 }
 
-.colored {
+.colored, a.colored:visited {
   color: var(--foreground-color);
+}
+
+h2, .section-title {
+  font-family: var(--title-font);
+  font-size: 3rem;
+
+  margin-bottom: 24px;
+}
+
+.section-content {
+  font-size: 1.9rem;
+}
+
+.section-content > * {
+  margin-bottom: 20px;
+}
+
+.section-content > :last-child {
+  margin-bottom: 48px;
+}
+
+.section-content ul, .section-content ol, .section-content dl {
+  padding-top: 16px;
+
+  padding-left: 64px;
 }
 
 body {
@@ -226,7 +251,7 @@ header > nav {
 
 #content > * {
   padding-left: 64px;
-  padding-right: 16px;
+  padding-right: 64px;
 }
 
 #main-image-container {
@@ -255,7 +280,7 @@ header > nav {
   margin-bottom: 20px;
 }
 
-.statement > p:not(:last-child) {
+.statement > :not(:last-child) {
   margin-bottom: 8px;
 }
 
@@ -265,7 +290,7 @@ header > nav {
   font-size: 1.1em;
 }
 
-/* (5) Content Styles - Menu tab */
+/* (3) Content Styles - Menu tab */
 
 #menu {
   --padding-left-right: 64px;
@@ -299,7 +324,7 @@ header > nav {
   flex-direction: row-reverse;
 }
 
-.menu-item:not(:last-child)::after {
+.menu-item:not(:last-child)::after, .reservation-section dt::after {
   content: '';
 
   align-self: center;
@@ -343,14 +368,7 @@ header > nav {
   height: 100%;
 }
 
-.item-name {
-  font-family: var(--title-font);
-  font-size: 3rem;
-  
-  margin-bottom: 24px;
-}
-
-.item-description > p {
+.item-description > * {
   margin-bottom: 16px;
 }
 
@@ -362,12 +380,48 @@ header > nav {
   font-size: 2rem;
 }
 
-.item-description {
-  font-size: 1.9rem;
-}
-
 .item-price {
   margin-top: auto;
+}
+
+/* (4) Content styles - About tab */
+
+.reservation-section {
+  text-align: center;
+}
+
+.reservation-section > .section {
+  border: 2px solid var(--foreground-color);
+  padding: 32px;
+
+  text-align: center;
+}
+
+.reservation-section p:first-child {
+  margin-bottom: 64px;
+}
+
+.reservation-section dl {
+  padding: 0;
+}
+
+.reservation-section dt {
+  display: flex;
+  flex-direction: column;
+
+  font-weight: bold;
+
+  padding-bottom: 20px;
+}
+
+.reservation-section dt::after {
+  margin-top: 8px;
+
+  width: 3.5ch;
+}
+
+.reservation-section dd:not(:last-child) {
+  margin-bottom: 48px;
 }
 
 /* (3) Footer styles */
