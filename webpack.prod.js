@@ -8,8 +8,8 @@ module.exports = merge(common, {
 
     plugins: [
         new WebpackFontPreloadPlugin({
-            // Add/Remove extensions in the array that is the value of `extensions` as needed.
-            extensions: ['woff', 'woff2'],
+            // Only preload WOFF2 font files
+            extensions: ['woff2'],
 
             crossorigin: true,
 
