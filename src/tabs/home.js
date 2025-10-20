@@ -1,6 +1,6 @@
 import contentElement from "../DOMCache";
 
-import pathToMainImage from "../assets/images/shuenz-hsu-Mpjv-bEfPLM-unsplash.jpg";
+import pathToMainImage from "../assets/images/shuenz-hsu-Mpjv-bEfPLM-unsplash.webp";
 
 const generateContent = () => {
     // (1) Main Image container
