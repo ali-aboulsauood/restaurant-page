@@ -8,7 +8,6 @@ import generateHomeContent from "./tabs/home";
 import generateMenuContent from "./tabs/menu";
 import generateAboutContent from "./tabs/about";
 
-// Sets necessary HTML attributes for all anchor elements.
 const setAnchorElementAttributes = () => {
     const allAnchorElements = document.querySelectorAll('a');
 
@@ -19,19 +18,24 @@ const setAnchorElementAttributes = () => {
     });
 };
 
-// Clears the main page content element.
 const clearContentElement = () => {
     // `Node.replaceChildren()` (with no arguments) is the most convenient method for emptying a DOM Node. It is a Baseline feature as of the time of writing this script.
     // Refer to https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren#emptying_a_node.
     contentElement.replaceChildren();
 };
 
-const doOnSiteLoad = (() => {
-    // Generate the content of the homepage on site load.
-    generateHomeContent();
+const displayCurrentYear = () => {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
 
-    // Set attributes for anchor elements on site load.
+    const currentYearElement = document.querySelector(".year");
+    currentYearElement.textContent = currentYear;
+}
+
+const doOnSiteLoad = (() => {
+    generateHomeContent();
     setAnchorElementAttributes();
+    displayCurrentYear();
 })();
 
 const CLASS_TAB = 'tab';
