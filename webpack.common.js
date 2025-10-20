@@ -14,8 +14,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/template.html',
-            // Ensures that the correct value for the `crossorigin` HTML attribute is used in `link rel="preload"` tags.
-            crossorigin: 'anonymous',
         }),
     ],
 
@@ -32,13 +30,11 @@ module.exports = {
             },
 
             {
-                // Add/Remove extensions in the regular expression that is the value of `test` as needed.
                 test: /\.(png|jpeg|jpg|svg)$/i,
                 type: 'asset/resource',
             },
 
             {
-                // Add/Remove extensions in the regular expression that is the value of `test` as needed.
                 test: /\.(woff|woff2)$/i,
                 type: 'asset/resource',
             },
