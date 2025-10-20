@@ -14,6 +14,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/template.html',
+            // Ensures that the correct value for the `crossorigin` HTML attribute is used in `link rel="preload"` tags.
+            crossorigin: 'anonymous',
         }),
     ],
 
