@@ -1,6 +1,12 @@
 import contentElement from "../DOMCache";
 import { suggestNewDish } from "../DOMCache";
 
+import firstImage from "../assets/images/menu/the-philosophers-breath.png";
+import secondImage from "../assets/images/menu/steak-of-enlightenment.png";
+import thirdImage from "../assets/images/menu/conceptual-caviar.png";
+import fourthImage from "../assets/images/menu/diamond-dusted-schadenfreude.png";
+import fifthImage from "../assets/images/menu/transcendence.png";
+
 // While the restaurant menu items are sorted by price, an ordered list (`ol`) is not the semantically correct element to represent it.
 // This is because the order of menu items is a display choice with no actual meaning - menu items are equivalent and the meaning of the menu will not be changed if it were reordered.
 const menuList = document.createElement('ul');
@@ -76,10 +82,6 @@ class menuItem {
             itemImage_.setAttribute('src', this.itemImage);
             itemImage_.setAttribute('alt', this.itemName);
 
-            const imgWidth = "25%";
-            itemImage_.setAttribute('width', imgWidth);
-            itemImage_.setAttribute('height', imgWidth);
-
             itemImageContainer.appendChild(itemImage_);
         } else {
             itemImageContainer.textContent = 'Photo unavailable';
@@ -108,7 +110,8 @@ let menuItems = [
 
         <p>The dish comes with a 40-page manifesto explaining why you're too unsophisticated to taste or even smell it anyway.</p>
         `,
-        8500
+        8500,
+        firstImage
     ),
 
     new menuItem(
@@ -120,7 +123,8 @@ let menuItems = [
 
         <p>The negative space represents your journey toward enlightenment through deprivation.</p>
         `,
-        12000
+        12000,
+        secondImage
     ),
 
     new menuItem(
@@ -129,7 +133,8 @@ let menuItems = [
         <p>The <em>idea</em> of caviar, presented as an empty plate with ambient ocean sounds.</p>
         <p>Our sommelier will describe what the caviar would have tasted like—had it existed.</p>
         `,
-        15000
+        15000,
+        thirdImage
     ),
 
     new menuItem(
@@ -138,7 +143,8 @@ let menuItems = [
         <p>A small portion of foam made from the tears of Michelin-starred chefs who lost their third star, garnished with actual diamond dust.</p>
         <p>Scientifically proven to provide zero nutritional value.</p>
         `,
-        17000
+        17000,
+        fourthImage
     ),
 
     new menuItem(
@@ -154,7 +160,8 @@ let menuItems = [
 
         <p>Your name will be engraved on our <i>Wall of Enlightenment</i>.</p>
         `,
-        125000
+        125000,
+        fifthImage
     ),
 ];
 
