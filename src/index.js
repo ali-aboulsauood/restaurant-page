@@ -83,3 +83,4 @@ const logo = document.querySelector("#logo");
 const clickEvent = new PointerEvent('click', {bubbles: true});
 
 logo.addEventListener('click', () => allTabs[0].dispatchEvent(clickEvent));
+logo.setAttribute('title', allTabs[0].getAttribute('title'));
