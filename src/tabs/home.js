@@ -1,6 +1,6 @@
 import contentElement from "../DOMCache";
 
-import pathToMainImage from "../assets/images/shuenz-hsu-Mpjv-bEfPLM-unsplash.webp";
+import pathToMainImage from "../assets/images/home.png";
 
 const generateContent = () => {
     // (1) Main Image container
@@ -12,7 +12,7 @@ const generateContent = () => {
 
     const mainImageContainer_Anchor = document.createElement('a');
     mainImageContainer_Anchor.setAttribute('href', "https://unsplash.com/photos/round-plate-fork-and-knife-Mpjv-bEfPLM");
-    mainImageContainer_Anchor.setAttribute('title', "Round plate, fork, and knife by Shuenz Hsu on Unsplash. Click to view original image.");
+    mainImageContainer_Anchor.setAttribute('title', "Round plate, fork, and knife by Shuenz Hsu on Unsplash (AI Edited — Click to view the original image).");
     
     mainImageContainer.appendChild(mainImageContainer_Anchor);
 
