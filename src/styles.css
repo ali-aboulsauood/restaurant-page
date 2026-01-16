@@ -119,10 +119,6 @@
 }
 
 h1, a, .tab {
-  -webkit-transition: text-shadow 0.25s linear;
-  -moz-transition: text-shadow 0.25s linear;
-  -ms-transition: text-shadow 0.25s linear;
-  -o-transition: text-shadow 0.25s linear;
   transition: text-shadow 0.25s linear;
 }
 
@@ -271,8 +267,33 @@ header > nav {
   border: 2px solid var(--foreground-color);
 }
 
-#text {
-  font-size: 2rem;
+#main-image-container img {
+  transition: filter 0.5s ease-out;
+}
+
+.item-image {
+  transition: filter 0.25s ease-out;
+}
+
+.item-text {
+  transition: text-shadow 0.25s ease-out;
+}
+
+#main-image-container img:hover {
+  filter: drop-shadow(0 0 24px var(--foreground-color));
+}
+
+.menu-item-parent:hover .item-image {
+  -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
+  filter: drop-shadow(0 0 14px var(--foreground-color));
+}
+
+.menu-item-parent:hover .item-text {
+  text-shadow: 0 0 2.3rem var(--text-color);
+}
+
+.menu-item-parent:hover .colored {
+  text-shadow: 0 0 2.2rem var(--foreground-color);
 }
 
 .statement {
