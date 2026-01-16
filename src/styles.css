@@ -118,8 +118,24 @@
   background-color: var(--text-color-transparent);
 }
 
-a:hover, a:focus-visible, button:hover, button:focus-visible, #logo:hover {
-  text-shadow: 0 0 8px var(--foreground-color);
+h1, a, .tab {
+  -webkit-transition: text-shadow 0.25s linear;
+  -moz-transition: text-shadow 0.25s linear;
+  -ms-transition: text-shadow 0.25s linear;
+  -o-transition: text-shadow 0.25s linear;
+  transition: text-shadow 0.25s linear;
+}
+
+h1:active, a:active, .tab:active {
+  text-shadow: none;
+}
+
+a:hover, a:focus-visible {
+  text-shadow: 0 0 10px var(--foreground-color);
+}
+
+button:hover, button:focus-visible, #logo:hover {
+  text-shadow: 0 0 16px var(--foreground-color);
 }
 
 button {
