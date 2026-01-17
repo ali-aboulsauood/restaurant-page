@@ -23,13 +23,20 @@ const generateContent = () => {
 
     mainImageContainer_Anchor.appendChild(mainImageContainer_Anchor_Image);
 
+    // (2) Headline and Text
+
+    const headlineAndText = document.createElement('div');
+    headlineAndText.setAttribute('id', "headline-and-text");
+
+    contentElement.appendChild(headlineAndText);
+
     // (2) Headline
 
     const headline = document.createElement('h2');
     headline.setAttribute('id', "headline");
     headline.innerHTML = `We've stripped the culinary experience down to its most essential element<wbr>—the <span class="colored">price tag</span>.`;
 
-    contentElement.appendChild(headline);
+    headlineAndText.appendChild(headline);
 
     // (3) Text
 
@@ -39,7 +46,7 @@ const generateContent = () => {
     const text = document.createElement('div');
     text.setAttribute('id', "text");
 
-    contentElement.appendChild(text);
+    headlineAndText.appendChild(text);
 
     const text_Statement1 = document.createElement('p');
     text_Statement1.innerHTML = `At The Gilded Fork, we're not just serving dinner, we're serving a statement—a statement that says, '<i>I have so much money, I can pay for an experience that is 99% plate and 1% sustenance.</i>'`;
