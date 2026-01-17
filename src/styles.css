@@ -458,7 +458,7 @@ h1, a, .tab {
 
 #headline-and-text:hover {
   text-shadow: 0 0 2.5rem var(--text-color);
-  filter: brightness(0.85);
+  filter: brightness(0.94);
 }
 
 #headline-and-text:hover .colored {
@@ -469,7 +469,7 @@ h1, a, .tab {
   transition: filter 0.5s ease-out;
 }
 
-.item-image {
+#main-image-container img, .item-image {
   transition-property: filter, transform;
   transition-duration: 0.25s, 0.3s;
   transition-timing-function: ease-out;
