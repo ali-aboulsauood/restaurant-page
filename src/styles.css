@@ -118,10 +118,6 @@
   background-color: var(--text-color-transparent);
 }
 
-h1, a, .tab {
-  transition: text-shadow 0.25s linear;
-}
-
 h1:active, a:active, .tab:active {
   text-shadow: none;
 }
@@ -265,35 +261,6 @@ header > nav {
 
 #main-image-container img, .item-image {
   border: 2px solid var(--foreground-color);
-}
-
-#main-image-container img {
-  transition: filter 0.5s ease-out;
-}
-
-.item-image {
-  transition: filter 0.25s ease-out;
-}
-
-.item-text {
-  transition: text-shadow 0.25s ease-out;
-}
-
-#main-image-container img:hover {
-  filter: drop-shadow(0 0 24px var(--foreground-color));
-}
-
-.menu-item-parent:hover .item-image {
-  -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
-  filter: drop-shadow(0 0 14px var(--foreground-color));
-}
-
-.menu-item-parent:hover .item-text {
-  text-shadow: 0 0 2.3rem var(--text-color);
-}
-
-.menu-item-parent:hover .colored {
-  text-shadow: 0 0 2.2rem var(--foreground-color);
 }
 
 .statement {
@@ -473,4 +440,54 @@ footer {
   width: fit-content;
 
   background-color: rgba(200, 200, 210, 0.06);
+}
+
+/* (*) Transitions and Animations */
+
+h1, a, .tab {
+  transition: text-shadow 0.25s linear;
+}
+
+#headline-and-text, .item-text, .reservation-section:hover .section {
+  transition: text-shadow 0.25s ease-out;
+}
+
+#headline-and-text {
+  transition-property: text-shadow, filter;
+}
+
+#headline-and-text:hover {
+  text-shadow: 0 0 2.5rem var(--text-color);
+  filter: brightness(0.85);
+}
+
+#headline-and-text:hover .colored {
+  text-shadow: 0 0 4rem var(--foreground-color);
+}
+
+#main-image-container img {
+  transition: filter 0.5s ease-out;
+}
+
+.item-image {
+  transition: filter 0.25s ease-out;
+}
+
+#main-image-container img:hover {
+  filter: drop-shadow(0 0 24px var(--foreground-color));
+}
+
+.menu-item-parent:hover .item-image {
+  -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
+  filter: drop-shadow(0 0 14px var(--foreground-color));
+}
+
+.menu-item-parent:hover .item-text,
+.reservation-section:hover .section {
+  text-shadow: 0 0 2.3rem var(--text-color);
+}
+
+.menu-item-parent:hover .colored,
+.reservation-section:hover .colored {
+  text-shadow: 0 0 2.2rem var(--foreground-color);
 }
