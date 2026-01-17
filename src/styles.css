@@ -470,7 +470,9 @@ h1, a, .tab {
 }
 
 .item-image {
-  transition: filter 0.25s ease-out;
+  transition-property: filter, transform;
+  transition-duration: 0.25s, 0.3s;
+  transition-timing-function: ease-out;
 }
 
 #main-image-container img:hover {
@@ -480,6 +482,8 @@ h1, a, .tab {
 .menu-item-parent:hover .item-image {
   -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
   filter: drop-shadow(0 0 14px var(--foreground-color));
+
+  transform: scale(1.03)
 }
 
 .menu-item-parent:hover .item-text,
