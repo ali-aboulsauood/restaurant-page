@@ -452,12 +452,18 @@ footer {
 
 @media (prefers-reduced-motion: no-preference) {
   h1, a, .tab {
-    transition: text-shadow 0.25s linear;
+    transition: text-shadow 0.55s ease-out;
+  }
+
+  a, .tab {
+    transition-duration: 0.25s;
+  }
+
+  h1:hover, a:hover, .tab:hover {
+    transition-timing-function: ease-in;
   }
   
-  #headline-and-text,
-  .item-text,
-  .reservation-section:hover .section {
+  #headline-and-text, .item-text, .reservation-section .section {
     transition: text-shadow 0.25s ease-out;
   }
 
@@ -465,15 +471,22 @@ footer {
     transition-property: text-shadow, filter;
   }
 
+  #headline-and-text:hover, .item-text:hover, .reservation-section:hover .section {
+    transition-timing-function: ease-in;
+  }
+
   #main-image-container img {
     transition: filter 0.5s ease-out;
   }
 
-  #main-image-container img,
-  .item-image {
+  #main-image-container img, .item-image {
     transition-property: filter, transform;
-    transition-duration: 0.25s, 0.3s;
-    transition-timing-function: ease-out;
+    transition-duration: 0.25s;
+    transition-timing-function: linear, ease-out;
+  }
+
+  .menu-item-parent:hover .item-image {
+    transition-timing-function: ease-in;
   }
 }
 
@@ -491,18 +504,15 @@ footer {
 }
 
 .menu-item-parent:hover .item-image {
-  -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
   filter: drop-shadow(0 0 14px var(--foreground-color));
 
   transform: scale(1.03);
 }
 
-.menu-item-parent:hover .item-text,
-.reservation-section:hover .section {
+.menu-item-parent:hover .item-text, .reservation-section:hover .section {
   text-shadow: 0 0 2.3rem var(--text-color);
 }
 
-.menu-item-parent:hover .colored,
-.reservation-section:hover .colored {
+.menu-item-parent:hover .colored, .reservation-section:hover .colored {
   text-shadow: 0 0 2.2rem var(--foreground-color);
 }
