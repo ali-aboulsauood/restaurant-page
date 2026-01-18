@@ -465,15 +465,6 @@ footer {
     transition-property: text-shadow, filter;
   }
 
-  #headline-and-text:hover {
-    text-shadow: 0 0 2.5rem var(--text-color);
-    filter: brightness(0.94);
-  }
-
-  #headline-and-text:hover .colored {
-    text-shadow: 0 0 4rem var(--foreground-color);
-  }
-
   #main-image-container img {
     transition: filter 0.5s ease-out;
   }
@@ -484,25 +475,34 @@ footer {
     transition-duration: 0.25s, 0.3s;
     transition-timing-function: ease-out;
   }
+}
 
-  #main-image-container img:hover {
-    filter: drop-shadow(0 0 24px var(--foreground-color));
-  }
+#headline-and-text:hover {
+  text-shadow: 0 0 2.5rem var(--text-color);
+  filter: brightness(0.94);
+}
 
-  .menu-item-parent:hover .item-image {
-    -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
-    filter: drop-shadow(0 0 14px var(--foreground-color));
+#headline-and-text:hover .colored {
+  text-shadow: 0 0 4rem var(--foreground-color);
+}
 
-    transform: scale(1.03)
-  }
+#main-image-container img:hover {
+  filter: drop-shadow(0 0 24px var(--foreground-color));
+}
 
-  .menu-item-parent:hover .item-text,
-  .reservation-section:hover .section {
-    text-shadow: 0 0 2.3rem var(--text-color);
-  }
+.menu-item-parent:hover .item-image {
+  -webkit-filter: drop-shadow(0 0 14px var(--foreground-color));
+  filter: drop-shadow(0 0 14px var(--foreground-color));
 
-  .menu-item-parent:hover .colored,
-  .reservation-section:hover .colored {
-    text-shadow: 0 0 2.2rem var(--foreground-color);
-  }
+  transform: scale(1.03);
+}
+
+.menu-item-parent:hover .item-text,
+.reservation-section:hover .section {
+  text-shadow: 0 0 2.3rem var(--text-color);
+}
+
+.menu-item-parent:hover .colored,
+.reservation-section:hover .colored {
+  text-shadow: 0 0 2.2rem var(--foreground-color);
 }
