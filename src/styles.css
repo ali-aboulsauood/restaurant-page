@@ -126,6 +126,33 @@ a:hover, a:focus-visible {
   text-shadow: 0 0 10px var(--foreground-color);
 }
 
+#skip-navigation {
+  display: block;
+
+  position: absolute;
+  top: 0;
+
+  transform: translateY(-100%);
+
+  text-align: center;
+
+  width: 100%;
+
+  padding: 1rem 0;
+  border: 4px solid var(--foreground-color);
+  margin-top: 0.25px;
+
+  background-color: rgba(200, 200, 210, 0.06);
+
+  text-transform: capitalize;
+}
+
+#skip-navigation:focus {
+  position: static;
+
+  transform: translateY(0%);
+}
+
 button:hover, button:focus-visible, #logo:hover, #logo:focus {
   text-shadow: 0 0 16px var(--foreground-color);
 }
@@ -451,6 +478,10 @@ footer {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  #skip-navigation {
+    transition-property: transform;
+  }
+
   h1, a, .tab {
     transition: text-shadow 0.55s ease-out;
   }
