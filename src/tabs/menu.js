@@ -94,6 +94,8 @@ class menuItem {
         parentContainer.replaceChildren(itemTextContainer, itemImageContainer);
         menuListItem.appendChild(parentContainer);
 
+        menuListItem.querySelector('.menu-item-parent').setAttribute('tabIndex', '0');
+
         menuList.appendChild(menuListItem);
     }
 };

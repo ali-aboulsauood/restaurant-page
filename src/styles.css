@@ -126,7 +126,7 @@ a:hover, a:focus-visible {
   text-shadow: 0 0 10px var(--foreground-color);
 }
 
-button:hover, button:focus-visible, #logo:hover {
+button:hover, button:focus-visible, #logo:hover, #logo:focus {
   text-shadow: 0 0 16px var(--foreground-color);
 }
 
@@ -459,7 +459,7 @@ footer {
     transition-duration: 0.25s;
   }
 
-  h1:hover, a:hover, .tab:hover {
+  h1:hover, h1:focus, a:hover, a:focus, .tab:hover, .tab:focus {
     transition-timing-function: ease-in;
   }
   
@@ -485,7 +485,7 @@ footer {
     transition-timing-function: linear, ease-out;
   }
 
-  .menu-item-parent:hover .item-image {
+  .menu-item-parent:hover .item-image, .menu-item-parent:focus .item-image {
     transition-timing-function: ease-in;
   }
 }
@@ -499,20 +499,20 @@ footer {
   text-shadow: 0 0 4rem var(--foreground-color);
 }
 
-#main-image-container img:hover {
+#main-image-container img:hover, #main-image-container a:focus img {
   filter: drop-shadow(0 0 24px var(--foreground-color));
 }
 
-.menu-item-parent:hover .item-image {
+.menu-item-parent:hover .item-image, .menu-item-parent:focus .item-image {
   filter: drop-shadow(0 0 14px var(--foreground-color));
 
   transform: scale(1.03);
 }
 
-.menu-item-parent:hover .item-text, .reservation-section:hover .section {
+.menu-item-parent:hover .item-text, .menu-item-parent:focus .item-text, .reservation-section:hover .section {
   text-shadow: 0 0 2.3rem var(--text-color);
 }
 
-.menu-item-parent:hover .colored, .reservation-section:hover .colored {
+.menu-item-parent:hover .colored, .menu-item-parent:focus .colored, .reservation-section:hover .colored {
   text-shadow: 0 0 2.2rem var(--foreground-color);
 }
