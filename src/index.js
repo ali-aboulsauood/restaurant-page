@@ -13,7 +13,11 @@ const setAnchorElementAttributes = () => {
 
     allAnchorElements.forEach(anchorElement => {
         anchorElement.setAttribute('rel', 'noopener noreferrer');
-        anchorElement.setAttribute('target', '_blank');
+
+        // Make links open in a new tab only if they point to an external resource.
+        if (anchorElement.hostname !== window.location.hostname)
+            anchorElement.setAttribute('target', '_blank');
+
         anchorElement.classList.add("colored");
     });
 };
