@@ -42,6 +42,7 @@ class menuItem {
 
         const itemImageContainer = document.createElement('div');
         itemImageContainer.classList.add("item-image", "colored");
+        itemImageContainer.setAttribute('aria-hidden', "true");
 
         // (1) Child nodes of `itemTextContainer`
         // --------------------------------------
