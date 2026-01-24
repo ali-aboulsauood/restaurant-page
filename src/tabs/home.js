@@ -15,6 +15,7 @@ const generateContent = () => {
     mainImageContainer_Anchor.setAttribute('title', "Round plate, fork, and knife by Shuenz Hsu on Unsplash (AI Edited — Click to view the original image).");
     
     mainImageContainer.appendChild(mainImageContainer_Anchor);
+    mainImageContainer.setAttribute('aria-hidden', 'true');
 
     const mainImageContainer_Anchor_Image = document.createElement('img');
     mainImageContainer_Anchor_Image.setAttribute('src', pathToMainImage);
