@@ -1,5 +1,7 @@
 // This module contains all DOM Node references that are needed by multiple modules
 
+const openInNewTabIconTemplate = document.querySelector('#open-in-new-tab-icon');
+
 // The main page content element, whose content is changed on tab switching.
 const contentElement = document.querySelector('#content');
 
@@ -18,4 +20,4 @@ suggestNewDish.innerHTML =
 
 export default contentElement;
 
-export {suggestNewDish};
+export {openInNewTabIconTemplate, suggestNewDish };

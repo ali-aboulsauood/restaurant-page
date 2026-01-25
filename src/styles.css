@@ -118,12 +118,29 @@
   background-color: var(--text-color-transparent);
 }
 
+a:has(> svg) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+}
+
 h1:active, a:active, .tab:active {
   text-shadow: none;
 }
 
 a:hover, a:focus-visible {
   text-shadow: 0 0 10px var(--foreground-color);
+}
+
+svg {
+  display: inline;
+
+  height: 100%;
+  width: 1.5ch;
+
+  padding-left: 0.1em;
 }
 
 #skip-navigation {

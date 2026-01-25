@@ -2,13 +2,13 @@ import "./styles.css"
 
 // TODO: Use a more dynamic way for bulk importing from directories
 
-import contentElement from "./DOMCache";
+import contentElement, { openInNewTabIconTemplate } from "./DOMCache";
 
 import generateHomeContent from "./tabs/home";
 import generateMenuContent from "./tabs/menu";
 import generateAboutContent from "./tabs/about";
 
-const setAnchorElementAttributes = () => {
+const setAnchorElements = () => {
     const allAnchorElements = document.querySelectorAll('a');
 
     allAnchorElements.forEach(anchorElement => {
@@ -19,6 +19,18 @@ const setAnchorElementAttributes = () => {
             anchorElement.setAttribute('target', '_blank');
 
         anchorElement.classList.add("colored");
+
+        const doesLinkOpenInANewTab = anchorElement.getAttribute('target', "_blank");
+        const doesLinkContainText = anchorElement.textContent !== "";
+        const doesLinkNeedNewTabIcon = !anchorElement.classList.contains('no-new-tab-icon');
+
+        if (doesLinkOpenInANewTab && doesLinkContainText && doesLinkNeedNewTabIcon) {
+            anchorElement.textContent = anchorElement.textContent.trimEnd();
+            anchorElement.appendChild(openInNewTabIconTemplate.content.cloneNode(true));
+
+            // Prevent re-appending of the "opens in a new tab" SVG to links that open in a new tab.
+            anchorElement.classList.add('no-new-tab-icon');
+        }
     });
 };
 
@@ -38,7 +50,7 @@ const displayCurrentYear = () => {
 
 const doOnSiteLoad = (() => {
     generateHomeContent();
-    setAnchorElementAttributes();
+    setAnchorElements();
     displayCurrentYear();
 })();
 
@@ -77,7 +89,7 @@ const switchTab = (event) => {
 
     clearContentElement();
     fillContentElement();
-    setAnchorElementAttributes();
+    setAnchorElements();
 };
 
 tabContainer.addEventListener('click', switchTab);

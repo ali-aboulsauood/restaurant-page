@@ -94,7 +94,7 @@ const generateContent = () => {
             </dd>
             <dt class="colored">Email</dt>
             <dd>
-                <a href="mailto: reservations@thegildedfork.luxury" title="click here to contact us">
+                <a href="mailto: reservations@thegildedfork.luxury" title="click here to contact us" class="no-new-tab-icon">
                     reservations@thegildedfork.luxury
                 </a>
             </dd>
