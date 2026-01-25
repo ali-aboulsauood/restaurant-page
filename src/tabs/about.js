@@ -1,5 +1,4 @@
 import contentElement from "../DOMCache";
-import { suggestNewDish } from "../DOMCache";
 
 const appendSection = (title, content = "", appendTarget = contentElement) => {
     // TODO: Add script to validate argument.

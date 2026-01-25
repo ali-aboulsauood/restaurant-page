@@ -2,6 +2,8 @@
 
 const openInNewTabIconTemplate = document.querySelector('#open-in-new-tab-icon');
 
+const skipLink = document.querySelector('#skip-navigation');
+
 // The main page content element, whose content is changed on tab switching.
 const contentElement = document.querySelector('#content');
 
@@ -20,4 +22,4 @@ suggestNewDish.innerHTML =
 
 export default contentElement;
 
-export {openInNewTabIconTemplate, suggestNewDish };
+export {openInNewTabIconTemplate, skipLink, suggestNewDish };
