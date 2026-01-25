@@ -1,8 +1,11 @@
 import contentElement from "../DOMCache";
+import { skipLink } from "../DOMCache";
 
 import pathToMainImage from "../assets/images/home.png";
 
 const generateContent = () => {
+    skipLink.setAttribute('href', "#headline-and-text");
+
     // (1) Main Image container
 
     const mainImageContainer = document.createElement('div');
