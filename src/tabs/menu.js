@@ -18,7 +18,7 @@ class menuItem {
     // Refer to: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat.
     #priceInUSDFormat = new Intl.NumberFormat(document.documentElement.getAttribute('lang'), { style: "currency", currency: "USD" });
 
-    #defaultChefName = "Ali Aboul-Sauood";
+    #defaultChefName = "Ali Kamel";
 
     // NOTE: `Number.prototype.toLocaleString` is not used for performance considerations. Refer to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString.
 

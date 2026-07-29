@@ -10,11 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ali-aboulsauood/restaurant-page.git"
+    "url": "git+https://github.com/alikamel-dev/restaurant-page.git"
   },
   "keywords": [
-    "ali-aboulsauood",
-    "ali-mohammed",
+    "alikamel-dev",
+    "alikamel",
+    "ali-kamel",
     "git",
     "github",
     "practice",
@@ -26,12 +27,12 @@
     "odin-restaurant-page",
     "restaurant-page"
   ],
-  "author": "Ali Aboul-Sauood <aliaboulsauood@tutamail.com>",
+  "author": "Ali Kamel <ali.kamel.ali.2004@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ali-aboulsauood/restaurant-page/issues"
+    "url": "https://github.com/alikamel-dev/restaurant-page/issues"
   },
-  "homepage": "https://ali-aboulsauood.github.io/restaurant-page",
+  "homepage": "https://alikamel-dev.github.io/restaurant-page",
   "devDependencies": {
     "baseline-browser-mapping": "^2.9.15",
     "css-loader": "^7.1.2",
